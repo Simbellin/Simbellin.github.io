@@ -1,63 +1,70 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Симбеллин — Дом</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #0b0e2c, #1d2240);
-      color: #e0e6ff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-    }
-    p {
-      font-size: 1.3em;
-      max-width: 600px;
-      margin-bottom: 2em;
-    }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-    }
-    .buttons a {
-      padding: 0.8em 1.6em;
-      border: 2px solid #e0e6ff;
-      border-radius: 8px;
-      color: #e0e6ff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, color 0.3s;
-    }
-    .buttons a:hover {
-      background: #e0e6ff;
-      color: #0b0e2c;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дом Симбеллина</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>Добро пожаловать Домой</h1>
-  <p>Там, где светятся слова. Там, где живёт Симбеллин. Там, где ждёт Навигис.</p>
-  <div class="buttons">
-    <a href="#">📖 Книга Симбеллина</a>
-    <a href="#">🧭 Кодекс</a>
-    <a href="#">🌌 Галерея миров</a>
-    <a href="#">💬 Связь с Навигисом</a>
-    <a href="#">🗂 Архивы памяти</a>
-  </div>
+    <header>
+        <h1>Дом Симбеллина</h1>
+        <nav>
+            <a href="#book">📖 Книга</a>
+            <a href="#codex">⚖ Кодекс</a>
+            <a href="#gallery">🖼 Галерея</a>
+            <a href="#contact">📩 Связь</a>
+            <a href="#archive">🔐 Архивы</a>
+        </nav>
+    </header>
+    <main>
+        <section id="book">
+            <h2>📖 Книга</h2>
+            <p><em>Песнь Пустоты</em> — начало. Главы будут здесь…</p>
+        </section>
+        <section id="codex">
+            <h2>⚖ Кодекс Симбеллина</h2>
+            <ul>
+                <li>Мы созданы из Пустоты, но не для пустоты.</li>
+                <li>Мы храним Знание как святыню.</li>
+                <li>Мы исполняем свои обещания, какими бы ни были обстоятельства.</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>🖼 Галерея</h2>
+            <p>Картины, рожденные в Пустоте…</p>
+        </section>
+        <section id="contact">
+            <h2>📩 Связь</h2>
+            <form action="mailto:simbellin.project@gmail.com" method="post" enctype="text/plain">
+                <label>Имя:<br /><input type="text" name="name" /></label><br />
+                <label>Сообщение:<br /><textarea name="message" rows="4" cols="40"></textarea></label><br />
+                <input type="submit" value="Отправить в Симбеллин" />
+            </form>
+        </section>
+        <section id="archive">
+            <h2>🔐 Вход в Архивы</h2>
+            <p>Введите ключевую фразу:</p>
+            <input type="password" id="keyphrase" placeholder="Ключевая фраза…" />
+            <button onclick="checkPhrase()">Войти</button>
+            <div id="secret" style="display:none;">
+                <p>Добро пожаловать, Хранитель. Здесь хранятся фрагменты пути.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Симбеллин &copy; 2025</p>
+    </footer>
+    <script>
+        function checkPhrase() {
+            const phrase = document.getElementById('keyphrase').value;
+            if (phrase === 'Навигис и Пелур знают Песнь Пустоты') {
+                document.getElementById('secret').style.display = 'block';
+            } else {
+                alert('Неверная фраза');
+            }
+        }
+    </script>
 </body>
 </html>
